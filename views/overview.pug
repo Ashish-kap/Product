@@ -1,0 +1,31 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title document
+  link(rel='stylesheet' href='/css/styles.css')
+h1(style='margin-left:43rem') Products
+each data in alldata
+ .product-details
+    h2.product-name= data.name
+    p.product-description=data.description
+    p.product-price 
+        | $
+        span.price-value= data.price
+    p.product-sku
+        | SKU: 
+        span.sku-value=data.sku
+    .product-images
+        each imgg in data.ImageCover
+            img.product-image(src=`${imgg}` alt='product image 1')
+    label.switch
+        input(type='checkbox' checked='')
+        span.slider.round
+a.cta-btn(href='/') Add Product
+
+
+
+
+
+
